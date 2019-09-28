@@ -11,7 +11,7 @@ export default class Main extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <label>Temperature (in Celsius)</label>
-                        <MonitorTemperature />
+                        <MonitorTemperature data={this.props.tempData} />
                     </div>
                     <div className="col-md-6">
                         <label>Pressure (in psi)</label>

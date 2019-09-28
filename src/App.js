@@ -12,7 +12,18 @@ class App extends Component {
   state = {
     data: [],
     randomData: "",
-    isMonitoring: true
+    isMonitoring: true,
+    tempData: {
+      columns: [
+          ['My Numbers', 18, 21, 25, 23, 21, 23]
+          // ['Your Numbers', 50, 20, 10, 40, 15, 25]
+      ],
+      type: 'area-spline',
+      size: {
+          height: 200
+      }
+    },
+
   }
 
   getDataFromKafka = () => {
@@ -49,8 +60,15 @@ class App extends Component {
         let data = {
           temp,altitude,pressure,airQuality
         };
+        let newTempData = [...this.state.tempData.columns[0], temp];
+        console.log(' new data is ', newTempData);
         this.setState({
-          randomData:data
+          randomData:data,
+          tempData: {
+            ...this.state.tempData,
+            columns: [newTempData]
+
+          }
         }, () => {
           console.log(this.state);
           this.getRandomData();
@@ -97,14 +115,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main />
+        <Main
+          tempData={this.state.tempData}
+        />
         
         {
         <button disabled={this.state.isMonitoring} onClick={this.handleMonitoringStart} className={this.state.isMonitoring ? "btn btn-success" : "btn btn-primary"}> Start Monitoring </button>
           
 
         }
-
         
           &nbsp;
         

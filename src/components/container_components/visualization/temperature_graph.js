@@ -9,7 +9,7 @@ export default class MonitorTemperature extends Component{
         this.state = {
             data: {
                 columns: [
-                    ['My Numbers', 30, 200, 100, 400, 150, 250]
+                    ['My Numbers', 18, 21, 25, 23, 21, 23]
                     // ['Your Numbers', 50, 20, 10, 40, 15, 25]
                 ],
                 type: 'area-spline',
@@ -27,7 +27,7 @@ export default class MonitorTemperature extends Component{
 
     render(){
         return(
-            <C3Chart data={this.state.data} />
+            <C3Chart data={this.props.data} />
         )
     }
 
