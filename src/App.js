@@ -32,6 +32,33 @@ class App extends Component {
       size: {
           height: 200
       }
+    },
+    alitudeData: {
+      columns: [
+          ['My_Numbers', 10000, 15000, 20000]
+          // ['Your Numbers', 50, 20, 10, 40, 15, 25]
+      ],
+      type: 'bar',
+      size: {
+          height: 200
+
+      },
+      colors: {
+        My_Numbers: '#ffbb33'
+      }
+    },
+    airQualityData: {
+      columns: [
+          ['My_Numbers', 1, 5, 1, 12, 10, 1]
+          // ['Your Numbers', 50, 20, 10, 40, 15, 25]
+      ],
+      type: 'spline',
+      size: {
+          height: 200
+      },
+      colors: {
+        My_Numbers: '#7bc143'
+      }
     }
 
   }
@@ -55,7 +82,6 @@ class App extends Component {
      let data = JSON.parse(message.value);
      console.log(data);
       });
-        console.log('this is working');
     }
 
     getRandomData = () => {
@@ -72,7 +98,9 @@ class App extends Component {
         };
         let newTempData = [...this.state.tempData.columns[0], temp];
         let newPressureData = [...this.state.pressureData.columns[0], pressure];
-        console.log(' new data is ', newTempData);
+        let newAltitudeData = [...this.state.alitudeData.columns[0], altitude];
+        let newAirQualityData = [...this.state.airQualityData.columns[0], airQuality];
+        // console.log(' new data is ', newTempData);
         this.setState({
           randomData:data,
           tempData: {
@@ -83,6 +111,16 @@ class App extends Component {
           pressureData: {
             ...this.state.pressureData,
             columns: [newPressureData]
+
+          },
+          alitudeData: {
+            ...this.state.alitudeData,
+            columns: [newAltitudeData]
+
+          },
+          airQualityData: {
+            ...this.state.airQualityData,
+            columns: [newAirQualityData]
 
           }
         }, () => {
@@ -134,6 +172,8 @@ class App extends Component {
         <Main
           tempData={this.state.tempData}
           pressureData={this.state.pressureData}
+          airQualityData={this.state.airQualityData}
+          alitudeData={this.state.alitudeData}
         />
         
         {

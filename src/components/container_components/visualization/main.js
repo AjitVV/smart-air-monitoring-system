@@ -23,11 +23,11 @@ export default class Main extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <label>Altitude (in ft)</label>
-                        <MonitorAltitude />
+                        <MonitorAltitude data={this.props.alitudeData} />
                     </div>
                     <div className="col-md-6">
                         <label>Air Quality (in AQI)</label>
-                        <MonitorAirQuality />
+                        <MonitorAirQuality data={this.props.airQualityData} />
                     </div>
                 </div>
             </div>
