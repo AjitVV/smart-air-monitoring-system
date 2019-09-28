@@ -23,6 +23,16 @@ class App extends Component {
           height: 200
       }
     },
+    pressureData: {
+      columns: [
+          ['My Numbers', 3, 5, 1, 13, 15, 1]
+          // ['Your Numbers', 50, 20, 10, 40, 15, 25]
+      ],
+      type: 'spline',
+      size: {
+          height: 200
+      }
+    }
 
   }
 
@@ -61,12 +71,18 @@ class App extends Component {
           temp,altitude,pressure,airQuality
         };
         let newTempData = [...this.state.tempData.columns[0], temp];
+        let newPressureData = [...this.state.pressureData.columns[0], pressure];
         console.log(' new data is ', newTempData);
         this.setState({
           randomData:data,
           tempData: {
             ...this.state.tempData,
             columns: [newTempData]
+
+          },
+          pressureData: {
+            ...this.state.pressureData,
+            columns: [newPressureData]
 
           }
         }, () => {
@@ -117,6 +133,7 @@ class App extends Component {
         <Header />
         <Main
           tempData={this.state.tempData}
+          pressureData={this.state.pressureData}
         />
         
         {

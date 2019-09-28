@@ -27,7 +27,7 @@ export default class MonitorTemperature extends Component{
 
     render(){
         return(
-            <C3Chart data={this.state.data} />
+            <C3Chart data={this.props.data} />
         )
     }
 
