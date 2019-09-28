@@ -35,7 +35,7 @@ class App extends Component {
     },
     alitudeData: {
       columns: [
-          ['My_Numbers', 10000, 15000, 20000]
+          ['My_Numbers', 10000, 15000, 20000, 10000, 30000, 11000, 25000]
           // ['Your Numbers', 50, 20, 10, 40, 15, 25]
       ],
       type: 'bar',
@@ -124,7 +124,7 @@ class App extends Component {
 
           }
         }, () => {
-          console.log(this.state);
+          // console.log(this.state);
           this.getRandomData();
         })
 
