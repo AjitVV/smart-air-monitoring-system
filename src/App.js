@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './components/layout_components/header/header';
+import Main from './components/container_components/visualization/main'
 
 class App extends Component {
   render(){
     return (
       <div className="App">
           <Header />
+          <Main />
       </div>
     )
   }
