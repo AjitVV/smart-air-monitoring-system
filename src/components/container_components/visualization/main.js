@@ -10,17 +10,23 @@ export default class Main extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
+                        <label>Temperature (in Celsius)</label>
                         <MonitorTemperature />
                     </div>
                     <div className="col-md-6">
+                        <label>Pressure (in psi)</label>
                         <MonitorPressure />
                     </div>
                 </div>
+                <br></br>
+                <hr></hr>
                 <div className="row">
                     <div className="col-md-6">
+                        <label>Altitude (in ft)</label>
                         <MonitorAltitude />
                     </div>
                     <div className="col-md-6">
+                        <label>Air Quality (in AQI)</label>
                         <MonitorAirQuality />
                     </div>
                 </div>
