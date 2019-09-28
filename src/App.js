@@ -185,7 +185,7 @@ class App extends Component {
           &nbsp;
         
 
-        <button onClick={this.handleClearTimeout} class="btn btn-primary"> Stop Monitoring </button>
+        <button onClick={this.handleClearTimeout} class="btn btn-danger"> Stop Monitoring </button>
       </div>
     )
   }
