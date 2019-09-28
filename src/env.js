@@ -1,3 +1,3 @@
 export const apiEndpoints = {
-    apiKafka : "localhost:8000"
+    apiKafka : "velomobile-01.srvs.cloudkafka.com:9094"
 }
